@@ -1,0 +1,84 @@
+﻿@model CourseMangmentSystemWeb.Models.Instructor
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div style="margin-left:100px; margin-top:20px;">
+    <h1> <i class="bi bi-person-plus-fill"></i>&nbsp Add Instructor</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label mb-2"></label>
+                    <input asp-for="Salary" class="form-control  mb-2" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="DepartmentId" class="control-label  mb-2"></label>
+                    <select asp-for="DepartmentId" class="form-control  mb-2" asp-items="ViewBag.DepartmentId" style="background-color:rgb(240,240,240) "></select>
+            </div>
+            <div class="form-group">
+                    <label asp-for="FirstName" class="control-label  mb-2"></label>
+                    <input asp-for="FirstName" class="form-control  mb-2" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="SecondName" class="control-label  mb-2"></label>
+                    <input asp-for="SecondName" class="form-control  mb-2" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="SecondName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="Email" class="control-label  mb-2"></label>
+                    <input asp-for="Email" class="form-control  mb-2" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="Password" class="control-label  mb-2"></label>
+                    <input asp-for="Password" class="form-control  mb-2" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="Address" class="control-label  mb-2"></label>
+                    <input asp-for="Address" class="form-control  mb-2" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="BirthDate" class="control-label  mb-2"></label>
+                    <input asp-for="BirthDate" class="form-control  mb-2" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdentityCard" class="control-label"></label>
+                    <input asp-for="IdentityCard" class="form-control" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="IdentityCard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="Nationality" class="control-label  mb-2"></label>
+                    <input asp-for="Nationality" class="form-control  mb-2" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="ProfilePicture" class="control-label  mb-2"></label>
+                    <input asp-for="ProfilePicture" type="file" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
+                <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="JoinAt" class="control-label  mb-2"></label>
+                    <input asp-for="JoinAt" class="form-control  mb-2" style="background-color:rgb(240,240,240) " />
+                <span asp-validation-for="JoinAt" class="text-danger"></span>
+            </div>
+                <div class="form-group text-center" style="margin-top:20px;">
+                <input type="submit" value="Create" class="btn btn-warning" />
+                    <a asp-action="Index" class="btn btn-danger  ms-1">  Back to List  </a>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

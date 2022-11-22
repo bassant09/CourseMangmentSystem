@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CourseMangmentSystemWeb.Models.RequestCourse>
+@{
+    ViewData["Title"] = "Request";
+    Layout = "~/Views/Shared/InstructorLayout.cshtml";
+}
+
+<h1> Student's Request</h1>
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instractor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>*@
+<div class="row ">
+    @foreach (var item in Model)
+    {
+        <div class="col-3 mb-5" style="padding: 60px;">
+            <div class="card  " style="width: 18rem;">
+                <img style=" width:auto; height:190px;" src="~/images/@item.Course.PhotoUrl" alt=" " />
+                <div class="card-body">
+                    <h5 class="card-title  mb-3 "> @item.Course.Name</h5>
+                    <h6 class="card-title  mb-3 "> Student Name: @item.Student.FirstName @item.Student.SecondName</h6>
+                   @* <h6 class="card-title  mb-3"> Description:     @item.Course.Description</h6>*@
+
+                    <h6 class="card-title mb-3"> Hours :  @item.Course.Hours</h6>
+                    <h6 class="card-title mb-3"> Department Name:  @item.Course.Department.Name</h6>
+                    <div class="text-center">
+                        <a class="btn btn-primary  " asp-controller="Instructor" asp-action="Accept" asp-route-CourseId="@item.CourseId" asp-route-StudentId="@item.StudentId" style="width:80px">Accept</a>
+                        <a class="btn btn-danger" asp-controller="Instructor" asp-action="Deny" asp-route-CourseId="@item.CourseId" asp-route-StudentId="@item.StudentId" style="width:80px"> Deny</a>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+@*</tbody>
+</table>*@
+

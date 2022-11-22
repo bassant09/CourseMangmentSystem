@@ -7,5 +7,6 @@ namespace CourseMangmentSystemWeb.Models
         public int Id { get; set; }
         public float Gpa { get; set; }
         public int Hours  { get; set; }
+       public List<RequestCourse>? RequestCourses { get; set; }
     }
 }

@@ -8,8 +8,23 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+            <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ProfilePicture" class="control-label mb-2"></label>
+                    <input id="ProfilePicture" name="ProfilePicture" type="file" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
+                    <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label mb-2"></label>
+                    <input asp-for="FirstName" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SecondName" class="control-label mb-2"></label>
+                    <input asp-for="SecondName" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
+                    <span asp-validation-for="SecondName" class="text-danger"></span>
+                </div>
             <div class="form-group">
                 <label asp-for="Gpa" class="control-label mb-2"></label>
                     <input asp-for="Gpa" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
@@ -21,16 +36,7 @@
                     <input asp-for="Hours" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
                 <span asp-validation-for="Hours" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                    <label asp-for="FirstName" class="control-label mb-2"></label>
-                    <input asp-for="FirstName" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                    <label asp-for="SecondName" class="control-label mb-2"></label>
-                    <input asp-for="SecondName" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
-                <span asp-validation-for="SecondName" class="text-danger"></span>
-            </div>
+           
             <div class="form-group">
                     <label asp-for="Email" class="control-label  mb-2"></label>
                     <input asp-for="Email" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
@@ -61,11 +67,7 @@
                     <input asp-for="Nationality" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
                 <span asp-validation-for="Nationality" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                    <label asp-for="ProfilePicture" class="control-label mb-2"></label>
-                    <input asp-for="ProfilePicture" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
-                <span asp-validation-for="ProfilePicture" class="text-danger"></span>
-            </div>
+            
                 <div class="form-group" style="margin-bottom:20px;">
                     <label asp-for="JoinAt" class="control-label  mb-2"></label>
                     <input asp-for="JoinAt" class="form-control mb-2" style="background-color:rgb(240,240,240)" />

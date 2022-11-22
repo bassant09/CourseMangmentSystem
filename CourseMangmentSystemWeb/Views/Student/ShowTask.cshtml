@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CourseMangmentSystemWeb.Models.CourseTask>
+
+
+@{
+    ViewData["Title"] = "ShowTask";
+    Layout = "~/Views/Shared/InstructorLayout.cshtml";
+}
+<style>
+    .l{
+        background: url('../images/stick.png');
+        background-repeat:no-repeat;
+        background-size:contain;
+        height:350px;
+        padding-top:80px;
+        font-family: 'Permanent Marker', cursive;
+        color: #130d6b;
+        font-size: 22px;
+      
+    }
+</style>
+<h1 class="text-center mt-4"> <i class="fa-solid fa-paperclip"></i>  My Tasks </h1>
+<div class="row">
+@foreach (var item in Model) {
+        <div class="col-3 p-3" > 
+            <div class="l px-4">
+                <ul>
+              @foreach(var x in item.Content.Split('-')){
+                        if (x != "")
+                        {
+                            <li>@x</li>
+                        }
+              }
+                </ul>
+                @*@foreach (var x in @item.Content){
+                    if (x == '-')
+                    {
+                        <br/>
+                        char z ='-'; 
+                        @z
+                    }
+                    else{
+                        @x
+                    }
+                
+                }*@
+    </div>
+    </div>
+        
+}
+</div>
+   

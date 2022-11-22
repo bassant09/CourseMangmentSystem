@@ -47,6 +47,11 @@ namespace CourseMangmentSystemWeb.Controllers
                 return RedirectToAction("Index"); 
             
         }
+        public IActionResult Create()
+        {
+           
+            return View();
+        }
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]

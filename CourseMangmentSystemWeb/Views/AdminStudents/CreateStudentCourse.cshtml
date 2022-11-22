@@ -1,0 +1,41 @@
+﻿@model CourseMangmentSystemWeb.Models.StudentCourse
+
+@{
+    ViewData["Title"] = "CreateStudentCourse";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div style="margin-left:100px; margin-top:20px;">
+
+<h1>Add Student's Courses</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateStudentCourse">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                    <label asp-for="Grade" class="control-label mb-2"></label>
+                    <input asp-for="Grade" class="form-control mb-2" />
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseId" class="control-label mb-2"></label>
+                    <select asp-for="CourseId" class="form-control mb-2" asp-items="ViewBag.CourseId"></select>
+            </div>
+            <div class="form-group">
+                    <label asp-for="StudentId" class="control-label mb-2"></label>
+                <select asp-for="StudentId" class ="form-control" asp-items="ViewBag.StudentId"></select>
+            </div>
+                <div class="form-group text-center" style="margin-top:20px;">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                    <a asp-action="Index" class="btn btn-danger  ms-1">  Back to List  </a>
+                </div>
+        </form>
+    </div>
+</div>
+
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

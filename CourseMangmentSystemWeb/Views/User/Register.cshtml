@@ -1,0 +1,62 @@
+﻿@model Student 
+@{
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<style>
+    body {
+        background-color: rgb(223,223,223)
+    }
+
+    .l {
+        border: none;
+        border-bottom: 1px solid rgb(177,177,177);
+        width: 100%;
+        padding: 5px;
+    }
+
+</style>
+
+<form asp-action="Register">
+<div class="row translate-middle" style="position:absolute; top:50%; left:50%;  background-color:white ; width:900px; height:auto">
+    <div class="col-6" style="background-image:url('../images/s.jpeg');">
+    </div>
+    <div class="col-6 p-5">
+
+        <h2 class="text-center mt-5">We are Coursera</h2>
+        <h7> Welcome! Log into Account to view today's Assigments</h7>
+        <div style="margin-top:35px">
+            <div class="d-flex" style="align-items:center; color : rgb(177,177,177) ">
+                <i class="fa-solid fa-user"></i>&nbsp
+                <input class="l"  asp-for="FirstName"  placeholder="First Name " />
+            </div>
+            <br />
+            <div class="d-flex" style="align-items:center; color : rgb(177,177,177) ">
+                <i class="fa-solid fa-user"></i>&nbsp
+                    <input class="l" asp-for="SecondName" placeholder="Second Name " />
+            </div>
+            <br />
+            <div class="d-flex" style="align-items:center; color : rgb(177,177,177) ">
+                <i class="fa-regular fa-at"></i>&nbsp
+                <input class="l" asp-for="Email" placeholder="Email" />
+            </div>
+            <br />
+            <div class="d-flex" style="align-items:center; color : rgb(177,177,177) ">
+                <i class="fa-solid fa-lock"></i>&nbsp
+                <input class="l" asp-for="Password" placeholder="Password" />
+            </div>
+            <br />
+            <div  style="align-items:center; color : rgb(177,177,177) ">
+                <label class="mb-2"> Profile Picture</label>
+                    <input  asp-for="ProfilePicture" type="file" class="form-control" style="background-color:rgb(240,240,240)" />
+            </div>
+
+           
+         
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary"  style="width:120px;">Register</button>
+            </div>
+           
+        </div>
+    </div>
+</div>
+</form>

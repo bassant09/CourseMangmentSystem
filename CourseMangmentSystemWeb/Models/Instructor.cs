@@ -10,8 +10,8 @@ namespace CourseMangmentSystemWeb.Models
         public int Salary { get; set; }
         [ForeignKey(nameof(Department))]
         [Required]
-        public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public int? DepartmentId { get; set; }
+        public Department? Department { get; set; }
 
     }
 }

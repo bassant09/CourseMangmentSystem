@@ -8,7 +8,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+            <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -63,7 +63,7 @@
             </div>
             <div class="form-group">
                     <label asp-for="ProfilePicture" class="control-label mb-2" ></label>
-                    <input asp-for="ProfilePicture" type="file" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
+                    <input id="ProfilePicture" name="ProfilePicture" type="file" class="form-control mb-2" style="background-color:rgb(240,240,240)" />
                 <span asp-validation-for="ProfilePicture" class="text-danger"></span>
             </div>
                 <div class="form-group" style="margin-bottom:20px";>

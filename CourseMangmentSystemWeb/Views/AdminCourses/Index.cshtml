@@ -43,37 +43,37 @@
         </tr>
     </thead>
     <tbody>
-@*@foreach (var item in Model) {*@
+@foreach (var item in Model) {
         <tr class="text-center">
+                <td>
+                    <img   style =" height:110px; width:150px;"   src="~/images/@item.PhotoUrl" alt=" " />
+                </td>
             <td>
-             @*   @Html.DisplayFor(modelItem => item.PhotoUrl)*@
-
+                @Html.DisplayFor(modelItem => item.Name)
+             
             </td>
             <td>
-              @*  @Html.DisplayFor(modelItem => item.Name)*@
-              DataBase1
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-              @*  @Html.DisplayFor(modelItem => item.Description)*@
+                @Html.DisplayFor(modelItem => item.Hours)
+               
             </td>
             <td>
-               @* @Html.DisplayFor(modelItem => item.Hours)*@
-               3
+                @Html.DisplayFor(modelItem => item.Department.Name)
+              
             </td>
             <td>
-              @*  @Html.DisplayFor(modelItem => item.Department.Name)*@
-              Information System 
-            </td>
-            <td>
-               @* @Html.DisplayFor(modelItem => item.Instractor.Id)*@
-               Uzmaki Naruto
+                    @Html.DisplayFor(modelItem => item.Instractor.FirstName )
+                    @Html.DisplayFor(modelItem => item.Instractor.SecondName )
+             
             </td>
             <td class="text-center">
-                <a class="btn btn-warning" asp-action="Edit" >Edit</a> 
-                <a class="btn btn-primary" asp-action="Details" >Details</a> 
-                <a class="btn btn-danger" asp-action="Delete"asp>Delete</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-@*}*@
+}
     </tbody>
 </table>

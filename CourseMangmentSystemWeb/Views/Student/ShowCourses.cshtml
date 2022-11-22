@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CourseMangmentSystemWeb.Models.StudentCourse>
+
+@{
+    ViewData["Title"] = "ShowCourses";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h1><i class="bi bi-house-door"></i> My Courses</h1>
+
+
+@*<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>*@
+<div class="row">
+@foreach (var item in Model) {
+        @*<tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Name)
+            </td>
+          
+            <td>
+                    @Html.ActionLink("Details", "CourseDetails", new {id = item.CourseId })
+            </td>
+        </tr>*@
+        <div class="col-3 mb-5" style="padding: 60px;">
+    <div class="card  " style="width: 18rem;" >
+        <img style=" width:auto; height:190px;" src="~/images/@item.Course.PhotoUrl" alt=" " />
+        <div class="card-body">
+            <h5 class="card-title"> @item.Course.Name</h5>
+            <h6 class="card-title"> Grade:     @item.Grade</h6>
+                  
+             <h6 class="card-title mb-3"> Course ID :  @item.Course.Id</h6>
+
+                    <a class="btn btn-primary" asp-action="ShowTask" asp-route-CourseId=" @item.Course.Id">Show Tasks</a>
+        </div>
+      
+    </div>
+         </div>
+}
+</div>
+   
